@@ -1,0 +1,9 @@
+*.txt
+*.log
+*.h5
+*.egg*
+dist
+build
+__pycache__
+t.py
+t*.py
