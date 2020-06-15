@@ -1,6 +1,6 @@
 # blender_data_gather
 
-to use this script with blender add the `blender_scripts` folder path as a the `Scripts` path in blender preferences
+to use this script with blender add the `blender_libs` folder path as a the `Scripts` path in blender preferences
 
 then switch to scripting layout and open the `gather_data.py` script
 
