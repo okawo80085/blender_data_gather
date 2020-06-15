@@ -13,8 +13,6 @@ handler = lose.Loser(os.path.normpath(f'{fp}/ground_truth.h5'))
 handler.new_group(fmode='w', mat44=(4, 4), pos=(3,), rot_q=(4,), frame_id=(1,))
 
 
-max_frames = 80 # number of frames to render, you may wanna change this
-
 frames_path = '{}/frames/{}'
 
 print ('starting to gather data\n\nframes will be saved to "' + os.path.normpath(frames_path.format(fp, '')) + '"')
@@ -25,7 +23,8 @@ print (handler)
 print ('starting render...\n')
 
 with handler:
-    for i in range(max_frames):
+	# sequence length is pulled from blender animation duration settings
+    for i in range(bpy.context.scene.frame_start, bpy.context.scene.frame_end+1, bpy.context.scene.frame_step):
         scene.frame_set(i)
         scene.render.filepath = os.path.normpath(frames_path.format(fp, i))
         bpy.ops.render.render(write_still=True) # render still

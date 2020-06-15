@@ -8,6 +8,8 @@ the script will look for an object named `tracker1` in your scene to pull positi
 
 save path for the data is set by blender output settings
 
+also data sequence length is dictated by blender's animation duration settings
+
 save data is a frame sequence synced with positional data from the tracker object
 
 frame sequence is saved as is, positional data is save using `lose.Loser` data handler
