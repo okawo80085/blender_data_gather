@@ -58,6 +58,7 @@ class Gatherer(bpy.types.Operator):
         finally:
             scene.render.filepath = fp
 
+        print ('data grab done')
         return {'FINISHED'}
 
 def register():
