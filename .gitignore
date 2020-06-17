@@ -8,3 +8,4 @@ __pycache__
 t.py
 t*.py
 *.pyc
+libz

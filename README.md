@@ -1,10 +1,26 @@
 # blender_data_gather
 
-to use this script with blender add the `blender_libs` folder path as a the `Scripts` path in blender preferences
+## installation
+install dependencies for this addon
+```
+> mkdir ./libz
+> cd ./libz
+> mkdir ./modules
+> cd ./modules
+> pip install lose==1.0.0 tables==3.5.2 -t .
+```
+then add the `libz` folder to `Blender Preferences`->`File Paths`->`Data`->`Scripts`
 
-then switch to scripting layout and open the `gather_data.py` script
+install the addon through `Blender Preferences`->`Add-ons`->`Install...`->select the `gather_data.py` file
 
-the script will look for an object named `tracker1` in your scene to pull positional data from, make sure it exists(i recommend you make it an empty and maybe parent it to something)
+## usage
+press space and search for `data grabber`, press enter
+
+it will look like blender crashed, but it didn't, i recommend you open the blender console to see the progress
+
+
+## what it will do
+the addon will look for an object named `tracker1` in your scene to pull positional data from, make sure it exists(i recommend you make it an empty and maybe parent it to something)
 
 save path for the data is set by blender output settings
 
