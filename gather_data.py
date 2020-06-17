@@ -12,7 +12,7 @@ import tables as t
 
 
 class Gatherer(bpy.types.Operator):
-    """Object Cursor Array"""
+    """Object data grabber"""
     bl_idname = "object.data_grabber"
     bl_label = "data grabber"
     bl_options = {'REGISTER', 'UNDO'}

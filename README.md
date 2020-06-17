@@ -16,7 +16,7 @@ install the addon through `Blender Preferences`->`Add-ons`->`Install...`->select
 ## usage
 press space and search for `data grabber`, press enter
 
-it will look like blender crashed, but it didn't, i recommend you open the blender console to see the progress
+it will look like blender crashed, but it didn't, i recommend you open the console before you start it to see the progress
 
 
 ## what it will do
