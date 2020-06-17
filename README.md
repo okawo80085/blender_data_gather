@@ -9,14 +9,14 @@ install dependencies for this addon
 > cd ./modules
 > pip install lose==1.0.0 tables==3.5.2 -t .
 ```
-then add the `libz` folder to `Blender Preferences`->`File Paths`->`Data`->`Scripts`
+then add the `libz` folder path to `Blender Preferences`->`File Paths`->`Data`->`Scripts`
 
 install the addon through `Blender Preferences`->`Add-ons`->`Install...`->select the `gather_data.py` file
 
 ## usage
-press space and search for `data grabber`, press enter
+press space and search for `start data grab`, press enter
 
-it will look like blender crashed, but it didn't, i recommend you open the console before you start it to see the progress
+it will look like blender froze, but it didn't, i recommend you open the console before you start it to see the progress
 
 
 ## what it will do
