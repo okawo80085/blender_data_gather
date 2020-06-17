@@ -1,7 +1,12 @@
 bl_info = {
-    "name": "gather data",
+    "name": "data grabber",
+    "author": "okawo80085",
+    "version": (0, 1, 0),
     "blender": (2, 80, 1),
-    "category": "Object",
+    "location": "See Add-ons Preferences",
+    "description": "gathers location data synced with frames from the tracker object",
+    "tracker_url": "https://github.com/okawo80085/blender_data_gather",
+    "category": "Development",
 }
 
 import bpy
@@ -14,7 +19,7 @@ import tables as t
 class Gatherer(bpy.types.Operator):
     """Object data grabber"""
     bl_idname = "object.data_grabber"
-    bl_label = "data grabber"
+    bl_label = "start data grab"
     bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
