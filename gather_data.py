@@ -49,6 +49,8 @@ class Gatherer(bpy.types.Operator):
                     scene.frame_set(i)
                     scene.render.filepath = os.path.normpath(frames_path.format(fp, i))
                     bpy.ops.render.render(write_still=True) # render still
+                    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
+
 
                     mat_temp = trkr.matrix_world
                     # save tracker data
