@@ -2,7 +2,7 @@ bl_info = {
     "name": "data grabber",
     "author": "okawo80085",
     "version": (0, 1, 0),
-    "blender": (2, 80, 1),
+    "blender": (2, 83, 0),
     "location": "See Add-ons Preferences",
     "description": "gathers location data synced with frames from the tracker object",
     "tracker_url": "https://github.com/okawo80085/blender_data_gather",
@@ -33,29 +33,28 @@ class Gatherer(bpy.types.Operator):
         handler.new_group(fmode='w', mat44=(4, 4), pos=(3,), rot_q=(4,))
         handler.new_group(atom=t.IntAtom(), frame_id=(1,))
 
-        frames_path = '{}/frames/{}'
-
-        print ('starting to gather data\n\nframes will be saved to "' + os.path.normpath(frames_path.format(fp, '')) + '"')
+        print ('starting to gather data\n\nframes will be saved to "' + os.path.normpath(f'{fp}/frames/') + '"')
 
         print ('this handler will be used to save data:')
         print (handler)
 
         print ('starting render...\n')
 
+        scene.render.filepath = fp
         try:
             with handler:
                 # sequence length is pulled from blender animation duration settings
                 for i in range(scene.frame_start, scene.frame_end+1, scene.frame_step):
                     scene.frame_set(i)
-                    scene.render.filepath = os.path.normpath(frames_path.format(fp, i))
-                    bpy.ops.render.render(write_still=True) # render still
-                    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1)
-
+                    scene.render.filepath = os.path.normpath(f'{fp}/frames/{i}')
+                    bpy.ops.wm.redraw_timer(type='DRAW_WIN_SWAP', iterations=1, time_limit=1/1000)
 
                     mat_temp = trkr.matrix_world
                     # save tracker data
                     handler.save(mat44=[np.array(mat_temp)], pos=[np.array(mat_temp.to_translation())], rot_q=[np.array(mat_temp.to_quaternion())], frame_id=[[i]])
                     print (f'frame {i} data saved')
+
+                    bpy.ops.render.render(write_still=True) # render still
 
         finally:
             scene.render.filepath = fp

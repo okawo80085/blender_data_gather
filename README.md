@@ -20,7 +20,7 @@ it will look like blender froze, but it didn't, i recommend you open the console
 
 
 ## what it will do
-the addon will look for an object named `tracker1` in your scene to pull positional data from, make sure it exists(i recommend you make it an empty and maybe parent it to something)
+the addon will look for an object named `tracker1` in your scene to pull positional data from, make sure it exists(i recommend you make it an empty and maybe parent it to something), also make sure it rotation is in quterions
 
 save path for the data is set by blender output settings
 
